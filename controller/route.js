@@ -25,11 +25,6 @@ router.route('/play').get(function(req,res){
     res.render('play');
 });
 
-router.route('/result').post(function(req,res){
-    
-    
-    res.render('result');
-});
 
 router.route('/history').get(function(req,res){
     
