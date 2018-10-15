@@ -1,0 +1,26 @@
+{
+  "name": "i_draw",
+  "version": "1.0.0",
+  "description": "for Depromeet Mini Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoHoYoung/I_Draw"
+  },
+  "author": "JoHoYoung SoyoungPark",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoHoYoung/I_Draw/issues"
+  },
+  "homepage": "https://github.com/JoHoYoung/I_Draw",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.3.3",
+    "multer": "^1.4.1"
+  }
+}
