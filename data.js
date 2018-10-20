@@ -16,4 +16,4 @@ var addData=function(database,subject,user,image,createdat,callback)
     
 }
 
-module.expors.addData=addData;
+module.exports.addData=addData;

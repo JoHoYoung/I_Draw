@@ -50,6 +50,7 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 //---------------route--------------------//
+let result; // 오류나서 일단 선언만 해두었음!
 app.post('/result',upload.array(result,10),function(req,res){
     var paramuser=req.session.user;
     var results=req.body.result;
@@ -80,11 +81,28 @@ var MongoClient = require('mongodb').MongoClient;
 var database;
 var UserSchema;
 var UserModel;
+const url = `mongodb://${process.env.EC2_HOST}:${process.env.MONGO_PORT}/${process.env.DB_NAME}`;
+const testUrl = `mongodb://${process.env.EC2_HOST}:${process.env.MONGO_PORT}/test`;
 
 function connectDB() {
-    var databaseUrl = 'mongodb://localhost:27017/local';
+    // EC2에 있는 mongoDB로 교체했습니다.
+    const databaseUrl = 'mongodb://13.209.98.212:27017/IDraw';
 
     mongoose.Promise = global.Promise;
+
+    const options = {
+        user: "idraw",
+        pass: "qwer1234",
+        autoReconnect: true,
+        useNewUrlParser: true,
+        poolSize: 10,
+        keepAlive: 300000,
+        connectTimeoutMS: 30000,
+        reconnectTries: 300000,
+        reconnectInterval: 2000,
+        promiseLibrary: global.Promise
+    };
+
     mongoose.connect(databaseUrl);
     database = mongoose.connection;
 
