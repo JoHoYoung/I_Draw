@@ -52,17 +52,21 @@ app.use('/uploads', static(path.join(__dirname, 'uploads')));
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+// 환경 변수 사용
+require('dotenv').config();
+
+// 이미지 업로드 
+const imageCtrl = require('./controller/ImageCtrl');
+
 //---------------route--------------------//
-let result; // 오류나서 일단 선언만 해두었음!
-app.post('/result',upload.array('result',10),function(req,res){
+// let result; // 오류나서 일단 선언만 해두었음!
+app.post('/result', imageCtrl.uploadArray, function(req, res){
     var paramuser=req.session.user;
     var results=req.body.result;
     var createdat=new Date().getTime() + 1000 * 60 * 60 * 9;
     var database=req.app.get('database');
     var imagetoshow=[];
     var lookstoshow=[{},{},{},{},{},{}];
-    console.log(req.session)
-    console.log(results);
     for(let i=0;i<results.length;i++)
     {
         data.adddata(database,results[i].subject,req.session.user,req.files[i].filename,createdat,function(err,data){
@@ -75,29 +79,23 @@ app.post('/result',upload.array('result',10),function(req,res){
         
         });
     }
-        //결과창으로 갈것은 방금 받은 이미지들, 결과값들
-    res.render("result",{"imagetoshow":imagetoshow,"user":paramuser,"looks":lookstoshow});
 
+    //결과창으로 갈것은 방금 받은 이미지들, 결과값들
+    res.render("result",{"imagetoshow":imagetoshow,"user":paramuser,"looks":lookstoshow});
 });
 
 //--------------DB연결---------------------//
 var MongoClient = require('mongodb').MongoClient;
 
 var database;
-var UserSchema;
-var UserModel;
-const url = `mongodb://${process.env.EC2_HOST}:${process.env.MONGO_PORT}/${process.env.DB_NAME}`;
-const testUrl = `mongodb://${process.env.EC2_HOST}:${process.env.MONGO_PORT}/test`;
-
 function connectDB() {
     // EC2에 있는 mongoDB로 교체했습니다.
-    const databaseUrl = 'mongodb://13.209.98.212:27017/IDraw';
-
+    const databaseUrl = `mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.DB_NAME}`;    
     mongoose.Promise = global.Promise;
 
     const options = {
-        user: "idraw",
-        pass: "qwer1234",
+        user: process.env.MONGO_USERNAME,
+        pass: process.env.MONGO_PASSWORD,
         autoReconnect: true,
         useNewUrlParser: true,
         poolSize: 10,
@@ -108,17 +106,15 @@ function connectDB() {
         promiseLibrary: global.Promise
     };
 
-    mongoose.connect(databaseUrl);
+    mongoose.connect(databaseUrl, options);
     database = mongoose.connection;
 
     database.on('error', console.error.bind(console, 'mongoose connection error'));
     database.on('open', function () {
-
        createdrawdata(database);
     });
 
-    database.on('disconnected', function () {
-        
+    database.on('disconnected', function () {        
         console.log('연결 끊어짐');
         setInterval(connectDB, 5000);
     });
@@ -126,9 +122,7 @@ function connectDB() {
 }
 
 function createdrawdata(database) {
-
     database.DrawdataSchema = require('./database/drawdata').createSchema(mongoose);
-
     database.Drawdata = mongoose.model("drawdata", database.DrawdataSchema);
 }
 
