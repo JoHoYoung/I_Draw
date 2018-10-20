@@ -1,7 +1,7 @@
-var addData=function(database,subject,user,image,callback)
+var addData=function(database,subject,user,image,createdat,callback)
 {
     
-    var data = new database.Drawdata({"subject":subject,"user":user,"image":image});
+    var data = new database.Drawdata({"subject":subject,"user":user,"image":image,"created_at":createdat});
     data.save(function(err){
         
         if(err)
