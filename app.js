@@ -54,7 +54,7 @@ app.set('views', './views');
 
 //---------------route--------------------//
 let result; // 오류나서 일단 선언만 해두었음!
-app.post('/result',upload.array('result',10),function(req,res){
+app.post('/result',function(req,res){
     var paramuser=req.session.user;
     var results=req.body.result;
     var createdat=new Date().getTime() + 1000 * 60 * 60 * 9;
@@ -66,7 +66,7 @@ app.post('/result',upload.array('result',10),function(req,res){
     for(let i=0;i<results.length;i++)
     {
         data.adddata(database,results[i].subject,req.session.user,req.files[i].filename,createdat,function(err,data){
-        imagetoshow.push(req.files[i].filename);
+        imagetoshow.push(results[i].url);
         for(let j=0;j<results[i].looks.length;j++)
         {
             lookstoshow[j].push(results[i].looks[j]);
