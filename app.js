@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var static = require('serve-static');
 var expressSession = require('express-session');
 var mongoose = require('mongoose');
+var cookieParser = require('cookie-parser');
 //유저들이 그린 그림 저장 경로 설정
 // 경로 : uploads폴더
 // 파일이름 : 처음에 입력한 사용자 이름 + 지금시간.
@@ -16,7 +17,7 @@ var storage = multer.diskStorage({
         cb(null,'./uploads')
     },
     filename:function(req,file,cb){
-        cb(null,req.session.user.id+'-'+Date.now());
+        cb(null,req.session.user.name+'-'+Date.now());
     }
 });
 
@@ -31,7 +32,13 @@ app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.urlencoded({
     extended: false
 }));
-app.use(bodyParser.json());
+app.use(cookieParser());
+var cookieParser = require('cookie-parser');
+app.use(expressSession({
+    secret: 'my key',
+    resave: true,
+    saveUninitialized: true
+}));
 
 var router = require('./controller/route.js')
 app.use('/', router);
@@ -40,25 +47,23 @@ app.use('/', router);
 app.use('/public', static(path.join(__dirname, 'public')));
 app.use('/uploads', static(path.join(__dirname, 'uploads')));
 
-app.use(expressSession({
-    secret: 'my key',
-    resave: true,
-    saveUninitialized: true
-}));
+
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
 //---------------route--------------------//
 let result; // 오류나서 일단 선언만 해두었음!
-app.post('/result',upload.array(result,10),function(req,res){
+app.post('/result',upload.array('result',10),function(req,res){
     var paramuser=req.session.user;
     var results=req.body.result;
     var createdat=new Date().getTime() + 1000 * 60 * 60 * 9;
     var database=req.app.get('database');
     var imagetoshow=[];
     var lookstoshow=[{},{},{},{},{},{}];
-    for(let i=0;i<result.length;i++)
+    console.log(req.session)
+    console.log(results);
+    for(let i=0;i<results.length;i++)
     {
         data.adddata(database,results[i].subject,req.session.user,req.files[i].filename,createdat,function(err,data){
         imagetoshow.push(req.files[i].filename);
