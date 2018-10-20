@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var session = require('express-session');
+var path = require('path');
 router.route('/').get(function (req, res) {
 
 
@@ -58,11 +59,11 @@ router.route('/play').post(function (req, res) {
 router.route('/history/:page').get(function (req, res) {
     
     var skip = path.parse(req.params.page).base;
- var datavbase = app.get('database');
+ var database = req.app.get('database');
  database.Drawdata.find({}).sort('created_at').skip((skip - 1) * 9).limit(9).exec(function (err, results) {
      
      
-     res.render('history',{data:results});
+     res.json(results);
  })
 
     
