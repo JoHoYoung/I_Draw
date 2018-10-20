@@ -59,17 +59,14 @@ require('dotenv').config();
 const imageCtrl = require('./controller/ImageCtrl');
 
 //---------------route--------------------//
-<<<<<<< HEAD
-let result; // 오류나서 일단 선언만 해두었음!
-app.post('/result',function(req,res){
-=======
+//let result; // 오류나서 일단 선언만 해두었음!
+//app.post('/result',function(req,res){
 // AWS에 업로드할 경우에는 아래와 같이 해주시면 됩니다!
 // app.post('/result', imageCtrl.uploadArray, function(req, res){
 
 // 로컬에 업로드할 경우
 // let result; // 오류나서 일단 선언만 해두었음!
-app.post('/result', upload.array('result',10), function(req, res){
->>>>>>> 55a146b8ffe01eee23ecc84dc829725fb309e59c
+app.post('/result', function(req, res){
     var paramuser=req.session.user;
     var results=req.body.result;
     var createdat=new Date().getTime() + 1000 * 60 * 60 * 9;
@@ -78,7 +75,7 @@ app.post('/result', upload.array('result',10), function(req, res){
     var lookstoshow=[{},{},{},{},{},{}];
     for(let i=0;i<results.length;i++)
     {
-        data.adddata(database,results[i].subject,req.session.user,req.files[i].filename,createdat,function(err,data){
+        data.adddata(database,results[i].subject,req.session.user.name,req.files[i].filename,createdat,function(err,data){
         imagetoshow.push(results[i].url);
         for(let j=0;j<results[i].looks.length;j++)
         {
@@ -88,7 +85,7 @@ app.post('/result', upload.array('result',10), function(req, res){
         
         });
     }
-
+res.setHeader('Content-Type', 'application/json');
     //결과창으로 갈것은 방금 받은 이미지들, 결과값들
     res.render("result",{"imagetoshow":imagetoshow,"user":paramuser,"looks":lookstoshow});
 });
@@ -132,13 +129,12 @@ function connectDB() {
 
 function createdrawdata(database) {
     database.DrawdataSchema = require('./database/drawdata').createSchema(mongoose);
-<<<<<<< HEAD
-
-    
-    = mongoose.model("drawdata", database.DrawdataSchema);
-=======
+//<<<<<<< HEAD
+//
+//    
+//    = mongoose.model("drawdata", database.DrawdataSchema);
+//=======
     database.Drawdata = mongoose.model("drawdata", database.DrawdataSchema);
->>>>>>> 55a146b8ffe01eee23ecc84dc829725fb309e59c
 }
 
 http.createServer(app).listen(app.get('port'),function(){
