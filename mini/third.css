@@ -1,0 +1,105 @@
+@font-face {
+  font-family: Noto Sans CJK KR;
+  src: url('fonts/NotoSansCJKkr-Medium.otf')
+}
+
+.bar{
+  margin-left: 160px;
+  margin-top: 230px;
+
+  display: flex;
+}
+.exit{
+  margin-top: 8px;
+}
+.I_draw{
+  z-index: 1;
+  position: absolute;
+
+  margin-left: 434px;
+  margin-top: -52px;
+}
+.pinkbox1{
+  width: 374px;
+  height: 146px;
+  border: solid 1.5px #ffffff;
+  background-color: #f70084;
+  margin-left: 160px;
+}
+.pinkbox2{
+  width: 714px;
+  height: 146px;
+  border: solid 1.5px #ffffff;
+  background-color: #f70084;
+  margin-left: 160px;
+}
+.bg{
+  width: 1730px;
+  height: 958px;
+
+  margin-left: 95px;
+  margin-top: -169px;
+
+  z-index: -1;
+  position: absolute;
+}
+.Umm {
+  width: 3001px;
+  height: 78px;
+  font-family: HighwayGothic;
+  font-size: 70px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: expanded;
+  line-height: 1.11;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+
+  margin-left: 28px;
+  margin-top: 34px;
+}
+.That-is-_______- {
+  width: 661px;
+  height: 78px;
+  font-family: HighwayGothic;
+  font-size: 70px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: expanded;
+  line-height: 1.11;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+
+  margin-left: 28px;
+  margin-top: 34px;
+}
+
+.bottom {
+  width: 290px;
+  height: 26px;
+  font-family: Noto Sans CJK KR;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #1909d3;
+
+  margin-top: 426px;
+  margin-left: 1410px;
+}
+.whitebox {
+  width: 320px;
+  height: 49px;
+  background-color: #ffffff;
+
+}
+.small_whitebox{
+  width: 222px;
+  height: 52px;
+  background-color: #ffffff;
+}

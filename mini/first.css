@@ -1,0 +1,139 @@
+@font-face {
+  font-family: IBMPlexMono;
+  src: url('fonts/IBMPlexMono-Light.ttf')
+}
+@font-face {
+  font-family: HighwayGothic;
+  src: url('fonts/HWYGOTH.ttf')
+}
+
+body{
+  background-color: #1909d3;
+}
+.October-27-Mini-project {
+  width: 250px;
+  height: 84px;
+  font-family: IBMPlexMono;
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.31;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+
+  margin-left: 564px;
+  margin-top: 134px;
+}
+.I-am-glad-to-meet-you {
+  width: 649px;
+  height: 222px;
+  font-family: HighwayGothicExpanded;
+  font-size: 100px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: expanded;
+  line-height: 1.11;
+  letter-spacing: normal;
+  text-align: left;
+  color: #f70084;
+  font-style: bold;
+  margin-left: 560px;
+  margin-top: 168px;
+
+  z-index: 1;
+}
+.logo {
+  width: 239px;
+  height: 164px;
+  object-fit: contain;
+
+  z-index: -1;
+  position: absolute;
+  left: 1044px;
+  top: 498px;
+}
+.Whats-your-Nickname {
+  width: 422px;
+  height: 42px;
+  font-family: IBMPlexMono;
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.31;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+
+  margin-left: 44px;
+}
+.bottom{
+  margin-left: 470px;
+  margin-top: 160px; 
+
+  display: flex;
+}
+.arrow{
+  height: 21.6px;
+  margin-top: 10px;
+}
+.circle {                                
+  width: 120px;                              
+  height: 120px;                              
+
+  border-radius: 60px;
+  background-color: #ffffff;      
+  z-index: 1;
+  position: absolute;    
+
+  margin-top: 6px;     
+  margin-left: 857px;
+} 
+.OK {
+  width: 34px;
+  height: 24px;
+  font-family: HighwayGothic;
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: expanded;
+  line-height: 1.14;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1909d3;
+
+  margin-left: 47px;
+  margin-top: 48px;
+  position: relative;
+}
+.name {
+  width: 396px;
+  height: 75px;
+  font-family: IBMPlexMono;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #00cff7;
+
+  margin-left: 544px;
+  margin-top: 134px;
+}
+
+.top{
+  display: flex;
+}
+.bar {
+  width: 260px;
+  height: 1px;
+  border: solid 1px #ffffff;
+
+  margin-left: 566px;
+  margin-top: 67px;
+
+}
