@@ -129,7 +129,8 @@ function createdrawdata(database) {
 
     database.DrawdataSchema = require('./database/drawdata').createSchema(mongoose);
 
-    database.Drawdata = mongoose.model("drawdata", database.DrawdataSchema);
+    
+    = mongoose.model("drawdata", database.DrawdataSchema);
 }
 
 http.createServer(app).listen(app.get('port'),function(){
