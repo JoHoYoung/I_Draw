@@ -2,10 +2,9 @@ var express = require('express');
 var router = express.Router();
 var session = require('express-session');
 var path = require('path');
+
 router.route('/').get(function (req, res) {
-
-
-    res.render('index');
+    res.render('pages/index');
 });
 
 router.route('/question').post(function (req, res) {
@@ -26,8 +25,7 @@ router.route('/question').post(function (req, res) {
 
 router.route('/play').post(function (req, res) {
 
-    
-     var user = req.body.user;
+    var user = req.body.user;
     console.log(req.body);
     req.session.user = {
         'name': user,
@@ -44,15 +42,12 @@ router.route('/play').post(function (req, res) {
         pivot--;
         sendset.push(probset[num]);
         probset.splice(num, 1);
-
     }
 
     console.log(req.session);
-    res.render('play', {
+    res.render('pages/play', {
         "problem": sendset
     });
-
-
 });
 
 

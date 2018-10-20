@@ -1,0 +1,153 @@
+body {
+  background-color: #1909d3;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top .October-27-Mini-project {
+  width: 250px;
+  height: 84px;
+  font-family: IBMPlexMono;
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.31;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.top .name {
+  width: 396px;
+  height: 75px;
+  font-family: IBMPlexMono;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #00cff7;
+}
+
+.middle {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.middle .I-am-glad-to-meet-you {
+  width: 649px;
+  height: 222px;
+  font-family: HighwayGothicExpanded;
+  font-size: 100px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: expanded;
+  line-height: 1.11;
+  letter-spacing: normal;
+  text-align: left;
+  color: #f70084;
+  font-style: bold;
+
+  z-index: 1;
+}
+
+
+.middle .logo {
+  width: 239px;
+  height: 164px;
+  object-fit: contain;
+
+  z-index: -1;
+  margin-top: 95px;
+  margin-left: -130px;
+}
+
+.bottom {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.bottom .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: -30px;
+}
+
+.bottom .title .arrow{
+  height: 21.6px;
+}
+
+.bottom .title .Whats-your-Nickname {
+  width: 422px;
+  height: 42px;
+  font-family: IBMPlexMono;
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.31;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+
+  margin-left: 44px;
+}
+
+.bottom .input {
+  width: 260px;
+  height: 30px;
+  background: transparent;
+  border: 0;
+  border-bottom: solid 1px #ffffff;
+  margin-top: 50px;
+
+  color: #fff;
+  font-size: 24px;
+  font-family: IBMPlexMono;
+}
+
+.bottom .circle {                                
+  width: 120px;                              
+  height: 120px;                              
+
+  border-radius: 60px;
+  background-color: #ffffff;      
+  z-index: 1;
+  position: absolute;    
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: HighwayGothic;
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: expanded;
+  line-height: 1.14;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1909d3;
+} 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../components/head') -%>
+    <link rel="stylesheet" type="text/css" href="/public/css/index.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <div class="October-27-Mini-project">October 27 Mini project</div>
+        <p class="name">
+          Design : Seul Lee, Sumin Han
+          Server : Soyoung Park, Hoyoung Jo
+          Front : Jaewon Kwon, Garam Choi
+        </p>	
+      </div>
+  
+      <div class="middle">
+        <div class="I-am-glad-to-meet-you">
+          I am glad to meet you.
+        </div>
+        <div class="logo">
+          <img src="/public/img/logo@2x.png">
+        </div>
+      </div>
+ 
+      <form method="POST" action="/play" class="bottom">
+        <div class="title">
+          <img src="/public/img/arrowx3.png" class="arrow">
+          <div class="Whats-your-Nickname">What's your Nickname?</div>
+        </div>
+        <input type="text" class="input" name="user" />
+        <button class="circle" type="submit">
+          <div class="OK">OK</div>
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

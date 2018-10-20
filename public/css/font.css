@@ -1,0 +1,14 @@
+@font-face {
+  font-family: IBMPlexMono;
+  src: url('/public/font/IBMPlexMono-Light.ttf')
+}
+
+@font-face {
+  font-family: HighwayGothic;
+  src: url('/public/font/HWYGOTH.ttf')
+}
+
+@font-face {
+  font-family: HighwayGothicExpanded;
+  src: url('/public/font/HWYGEXPD.ttf')
+}
