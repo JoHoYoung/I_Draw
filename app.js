@@ -46,7 +46,7 @@ app.use('/', router);
 //upload, public 폴더안에 있는 파일들을 사이트의 /upload 패스로 접근 할 수 있게 함
 app.use('/public', static(path.join(__dirname, 'public')));
 app.use('/uploads', static(path.join(__dirname, 'uploads')));
-
+app.use('/data', static(path.join(__dirname, 'data')))
 
 
 app.set('view engine', 'ejs');

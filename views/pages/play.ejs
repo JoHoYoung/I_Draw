@@ -3,6 +3,22 @@
   <head>
     <%- include('../components/head') -%>
     <link rel="stylesheet" type="text/css" href="/public/css/play.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.8.0"></script>
+
+    <script>
+      var problems = '<%= problem %>'
+      var matrix = problems.split(',')
+    </script>
+    <script src="/public/js/play.js"></script>
+    <script src="/public/js/matrix.js"></script>
+    <script src="/public/js/nn.js"></script>
+    <script src="/public/js/loadBinary.js"></script>
+    <script src="/public/js/trainTest.js"></script>
+    <script src="/public/js/dataPrep.js"></script>
+    <script src="/public/js/sketch.js"></script>
   </head>
   <body class="start">
     <div class="container">
@@ -10,15 +26,26 @@
         <div class="subject-area">
           <div class="subject-title">
             <p>The Subject is</p>
-            <span class="subject">보노보노</span>
+            <span class="subject"></span>
           </div>
           <div class="start-btn">
             <span>Start</span>
-            <div>OK</div>
+            <div class="start-ok">OK</div>
           </div>
         </div>
         <img src="/public/img/bg-1@2x.png">
       </div>
     </div>
+
+    <div class="predict-area">
+      <div class="title">...Umm...</div>
+      <div class="title">That is <span class="predict"></span>?</div>
+      <img src="/public/img/I_drawx2.png" class="logo">
+    </div>
+
+    <button id="train">train</button>
+    <button id="test">test</button>
+    <button id="guess">guess</button>
+    <button id="clear">clear</button>
   </body>
 </html>

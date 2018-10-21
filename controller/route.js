@@ -54,11 +54,9 @@ router.route('/play').post(function (req, res) {
 router.route('/history/:page').get(function (req, res) {
     
     var skip = path.parse(req.params.page).base;
- var database = req.app.get('database');
- database.Drawdata.find({}).sort('created_at').skip((skip - 1) * 9).limit(9).exec(function (err, results) {
-     
-     
-     res.json(results);
+    var database = req.app.get('database');
+    database.Drawdata.find({}).sort('created_at').skip((skip - 1) * 9).limit(9).exec(function (err, results) { 
+    res.json(results);
  })
 
     

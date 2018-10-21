@@ -1,7 +1,4 @@
 body {
-  width: calc(100vw - 90px);
-  height: calc(100vh - 60px);
-  padding: 30px 45px;
   background-image: url('/public/img/line@3x.png');
   background-repeat: no-repeat;
   background-origin: content-box;
@@ -43,6 +40,14 @@ body .show-subject {
 .start img {
   position: absolute;
   z-index: 0;
+}
+
+.start canvas {
+  display: none;
+}
+
+.start .predict-area {
+  display: none;
 }
 
 .subject-title {
@@ -121,4 +126,42 @@ body .show-subject {
   line-height: 1.2;
   letter-spacing: normal;
   text-align: left;
+}
+
+.predict-area {
+  margin: 0 auto;
+  position: absolute;
+  z-index: 2;
+  top: 50px;
+  left: 50px;
+}
+
+.predict-area .title {
+  background-color: #f70084;
+  padding: 15px;
+  font-family: HighwayGothic;
+  font-size: 35px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: expanded;
+  line-height: 1.11;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+.predict-area .title span {
+  border-bottom: 2px solid #fff;
+  min-width: 100px;
+  padding: 10px;
+}
+
+.predict-area .logo {
+  position: absolute;
+  right: -55px;
+  top: -40px;
+  z-index: 1;
+  width: 100px;
 }
