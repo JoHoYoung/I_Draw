@@ -1,53 +1,49 @@
 const len = 784;
 const totalData = 1000;
 
-const CAT = 0;
-const RAINBOW = 1;
-const TRAIN = 2;
-
-let catsData;
-let trainsData;
-let rainbowsData;
-
-let cats = {};
-let trains = {};
-let rainbows = {};
-
+let bear = {}, cat = {}, dog = {}, duck = {}, fish = {}, frog = {}, lion = {}, monkey = {}, rabbit = {}, sheep = {};
+let bearData, catData, dogData, duckData, fishData, frogData, lionData, monkeyData, rabbitData, sheepData;
 let nn;
+let Animal = [bear, cat, dog, duck, fish, frog, lion, monkey, rabbit, sheep];
+let AnimalName = ['bear', 'cat', 'dog', 'duck', 'fish', 'frog', 'lion', 'monkey', 'rabbit', 'sheep'];
+let AnimalData = [bearData, catData, dogData, duckData, fishData, frogData, lionData, monkeyData, rabbitData, sheepData];
+
+// let width = $(window).width()
+// let height = $(window).height()
+let width = 280;
+let height = 280;
 
 function preload() {
   // 학습한 데이터 미리 로드
-  catsData = loadBytes('data/cats1000.bin');
-  trainsData = loadBytes('data/trains1000.bin');
-  rainbowsData = loadBytes('data/rainbows1000.bin');
+  for (let i = 0; i < 10; i++) {
+    AnimalData[i] = loadBytes(`data/${AnimalName[i]}.bin`)
+  }
 }
 
 function setup() {
-  // 그림 그릴 준비
-  let width = $(window).width()
-  let height = $(window).height()
-
+  // 화면 크기에 맞게 캔버스 생성
   createCanvas(width, height);
   background('rgba(255, 255, 255, 0)');
 
   // 데이터 준비
-  prepareData(cats, catsData, CAT);
-  prepareData(rainbows, rainbowsData, RAINBOW);
-  prepareData(trains, trainsData, TRAIN);
+  for (let i = 0; i < 10; i++) {
+    prepareData(Animal[i], AnimalData[i], i);
+  }
+  // 신경망 생성 
+  // 28x28=784 픽셀을 64 KNN으로 
+  // 결과는 총 10개
+  nn = new NeuralNetwork(784, 64, 10);
 
-  // 신경망 생성
-  nn = new NeuralNetwork(784, 64, 3);
-
-  // 데이터 랜덤화
+  // Randomizing the data
   let training = [];
-  training = training.concat(cats.training);
-  training = training.concat(rainbows.training);
-  training = training.concat(trains.training);
+  for (let i = 0; i < 10; i++) {
+    training = training.concat(Animal[i].training);
+  }
 
   let testing = [];
-  testing = testing.concat(cats.testing);
-  testing = testing.concat(rainbows.testing);
-  testing = testing.concat(trains.testing);
+  for (let i = 0; i < 10; i++) {
+    testing = testing.concat(Animal[i].testing);
+  }
 
   let trainButton = select('#train');
   let epochCounter = 0;
@@ -62,7 +58,6 @@ function setup() {
     let percent = testAll(testing);
     console.log("Percent: " + nf(percent, 2, 2) + "%");
   });
-
 
   let guessButton = select('#guess');
   guessButton.mousePressed(function() {
@@ -79,15 +74,7 @@ function setup() {
     // console.log(guess);
     let m = max(guess);
     let classification = guess.indexOf(m);
-    if (classification === CAT) {
-      console.log("cat");
-    } else if (classification === RAINBOW) {
-      console.log("rainbow");
-    } else if (classification === TRAIN) {
-      console.log("train");
-    }
-
-    //image(img, 0, 0);
+    console.log(AnimalName[classification])
   });
 
   let clearButton = select('#clear');
@@ -102,28 +89,38 @@ function setup() {
   // }
 }
 
+function train() {
+  // 학습 시작
+  // 데이터 랜덤화
+  let training = [];
+  let epochCounter = 0;
+  for (let i = 0; i < 10; i++) {
+    training = training.concat(Animal[i].training);
+  }
+  epochCounter++;
+  console.log("Epoch: " + epochCounter);
+  trainEpoch(training);
+}
+
 function guess() {
   // 추측 시작
   let inputs = [];
-  let img = get();
+  let img = get(0, 0, width, height);
+  // 이미지를 28x28 픽셀로 리사이즈
   img.resize(28, 28);
   img.loadPixels();
+  
   for (let i = 0; i < len; i++) {
     let bright = img.pixels[i * 4];
     inputs[i] = (255 - bright) / 255.0;
   }
-
+  
   let guess = nn.predict(inputs);
   let m = max(guess);
   let classification = guess.indexOf(m);
-  let result = '...'
-  if (classification === CAT) {
-    result = '고양이'
-  } else if (classification === RAINBOW) {
-    result = '무지개'
-  } else if (classification === TRAIN) {
-    result = '기차'
-  }
+  let result = null
+  
+  result = AnimalName[classification];
 
   return result
 }
@@ -132,11 +129,11 @@ function guess() {
 function draw() {
   strokeWeight(8);
   stroke(0);
-  if (mouseIsPressed) {
+  if (!$('body').hasClass('start') && mouseIsPressed) {
     line(pmouseX, pmouseY, mouseX, mouseY);
     
     // 추측 시작
-    let result = guess()
-    $('.predict').text(result)
+    // let result = guess()
+    // $('.predict').text(result)
   }
 }

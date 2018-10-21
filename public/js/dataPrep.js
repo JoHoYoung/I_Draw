@@ -5,6 +5,7 @@ function prepareData(category, data, label) {
   for (let i = 0; i < totalData; i++) {
     let offset = i * len;
     let threshold = floor(0.8 * totalData);
+    
     if (i < threshold) {
       category.training[i] = data.bytes.subarray(offset, offset + len);
       category.training[i].label = label;

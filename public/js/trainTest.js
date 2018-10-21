@@ -1,15 +1,13 @@
 function trainEpoch(training) {
   shuffle(training, true);
-  //console.log(training);
-  // Train for one epoch
+  // 훈련 시작
   for (let i = 0; i < training.length; i++) {
     let data = training[i];
     let inputs = Array.from(data).map(x => x / 255);
     let label = training[i].label;
-    let targets = [0, 0, 0];
+    let targets = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    
     targets[label] = 1;
-    // console.log(inputs);
-    // console.log(targets);
     nn.train(inputs, targets);
   }
 }
@@ -27,9 +25,6 @@ function testAll(testing) {
 
     let m = max(guess);
     let classification = guess.indexOf(m);
-    // console.log(guess);
-    // console.log(classification);
-    // console.log(label);
 
     if (classification === label) {
       correct++;

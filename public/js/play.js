@@ -7,28 +7,8 @@ $(function() {
   $('.start-ok').on('click', function() {
     $('body').removeClass('start')
   })
+
+  // 플레이 OK 누르면 학습 후 다음 문제
+  $('.play-ok').on('click', function() {
+  })
 })
-
-// $(function() {
-//   var width = $(document).width()
-//   var height = $(document).height()
-
-//   $('canvas').attr('width', width).attr('height', height)
-//   $('#sketch_canvas').sketch();
-// })
-
-// function getPrediction() {
-//   // 인공지능 예측 관련 불려오기
-//   var canvas = $('#sketch_canvas')[0];
-//   var image = canvas.toDataURL("image/png");
-//   $.get("/api/guess", { image:  image}, function (data, status){
-//       $("#guess_field").text("Guess: " + data.guess);
-//   });
-// }
-
-// function clearSketch() {
-//   var canvas = document.getElementById('sketch_canvas');
-//   canvas.getContext('2d').clearRect(0,0,400,400);
-//   $('#sketch_canvas').sketch('actions',[]);
-//   $("#guess_field").text("");
-// }

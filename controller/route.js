@@ -32,9 +32,9 @@ router.route('/play').post(function (req, res) {
         authorized: true
     };
 
-    var probset = ["뽀로로", "보노보노", "도라에몽", "흰둥이", "호빵맨", "둘리", "스폰지밥", "식빵맨", "미니언", "키티", "짱구"];
+    var probset = ['bear', 'cat', 'dog', 'duck', 'fish', 'frog', 'lion', 'monkey', 'rabbit', 'sheep'];
 
-    var pivot = 11;
+    var pivot = 10;
 
     var sendset = [];
     for (let i = 0; i < 3; i++) {
@@ -58,7 +58,6 @@ router.route('/history/:page').get(function (req, res) {
     database.Drawdata.find({}).sort('created_at').skip((skip - 1) * 9).limit(9).exec(function (err, results) { 
     res.json(results);
  })
-
     
 });
 

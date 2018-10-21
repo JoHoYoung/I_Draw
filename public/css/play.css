@@ -165,3 +165,29 @@ body .show-subject {
   z-index: 1;
   width: 100px;
 }
+
+.play-ok {
+  width: 60px;
+  height: 60px;
+  background-color: #1909d3;
+  border-radius: 50%;
+
+  font-family: HighwayGothic;
+  font-size: 11px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: expanded;
+  line-height: 1.09;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  position: absolute;
+  right: -45px;
+  top: 120px;
+}
