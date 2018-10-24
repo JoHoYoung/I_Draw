@@ -22,7 +22,6 @@ router.route('/question').post(function (req, res) {
 
 
 });
-
 router.route('/play').post(function (req, res) {
 
 
