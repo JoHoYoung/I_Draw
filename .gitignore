@@ -72,3 +72,5 @@ typings/
 
 # Serverless directories
 .serverless
+
+.after_git.sh
