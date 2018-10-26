@@ -17,7 +17,7 @@ $(function() {
     var img = canvasObj.toDataURL();
     
     $.ajax({
-      url: 'http://localhost:8000/predict',
+      url: 'http://52.79.72.80/predict',
       method: 'POST',
       contentType: 'application/json',
       data: JSON.stringify({
