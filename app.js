@@ -28,7 +28,7 @@ var upload=multer({
 
 var app=express();
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8082);
 app.use(bodyParser.urlencoded({
     extended: false
 }));
@@ -62,7 +62,7 @@ const imageCtrl = require('./controller/ImageCtrl');
 //let result; // 오류나서 일단 선언만 해두었음!
 //app.post('/result',function(req,res){
 // AWS에 업로드할 경우에는 아래와 같이 해주시면 됩니다!
-// app.post('/result', imageCtrl.uploadArray, function(req, res){
+// app.post('/result', upload.array('result',10), function(req, res){
 
 // 로컬에 업로드할 경우
 // let result; // 오류나서 일단 선언만 해두었음!
