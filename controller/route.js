@@ -32,19 +32,17 @@ router.route('/play').post(function (req, res) {
         authorized: true
     };
 
-    var probset = ['bear', 'cat', 'dog', 'duck', 'fish', 'frog', 'lion', 'monkey', 'rabbit', 'sheep'];
-
-    var pivot = 10;
+    var probset = ['cat', 'airplane', 'rainbow']
+    var pivot = 3;
 
     var sendset = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 2; i++) {
         let num = Math.floor(Math.random() * pivot);
         pivot--;
         sendset.push(probset[num]);
         probset.splice(num, 1);
     }
 
-    console.log(req.session);
     res.render('pages/play', {
         "problem": sendset
     });

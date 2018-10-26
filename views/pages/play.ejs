@@ -6,18 +6,12 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.8.0"></script>
 
     <script>
       var problems = '<%= problem %>'
       var matrix = problems.split(',')
     </script>
     <script src="/public/js/play.js"></script>
-    <script src="/public/js/matrix.js"></script>
-    <script src="/public/js/nn.js"></script>
-    <script src="/public/js/loadBinary.js"></script>
-    <script src="/public/js/trainTest.js"></script>
-    <script src="/public/js/dataPrep.js"></script>
     <script src="/public/js/sketch.js"></script>
   </head>
   <body class="start">
@@ -44,11 +38,9 @@
       <div class="play-ok">
         OK
       </div>
+      <div class="play-clear" id="clear">
+        Clear
+      </div>
     </div>
-
-    <button id="train">train</button>
-    <button id="test">test</button>
-    <button id="guess">guess</button>
-    <button id="clear">clear</button>
   </body>
 </html>

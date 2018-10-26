@@ -11,4 +11,22 @@ $(function() {
   // 플레이 OK 누르면 학습 후 다음 문제
   $('.play-ok').on('click', function() {
   })
+
+  var intervalID = setInterval(function() {
+    var canvasObj = document.getElementById("defaultCanvas0");
+    var img = canvasObj.toDataURL();
+    
+    $.ajax({
+      url: 'http://localhost:8000/predict',
+      method: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({
+        image: img
+      }),
+      success: function(res) {
+        var result = res.result;
+        $('.predict').text(result)
+      },
+    })
+  }, 5000);
 })
