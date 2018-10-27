@@ -10,6 +10,7 @@ $(function() {
 
   // 플레이 OK 누르면 학습 후 다음 문제
   $('.play-ok').on('click', function() {
+      location.reload();
   })
 
   var intervalID = setInterval(function() {

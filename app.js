@@ -129,11 +129,6 @@ function connectDB() {
 
 function createdrawdata(database) {
     database.DrawdataSchema = require('./database/drawdata').createSchema(mongoose);
-//<<<<<<< HEAD
-//
-//    
-//    = mongoose.model("drawdata", database.DrawdataSchema);
-//=======
     database.Drawdata = mongoose.model("drawdata", database.DrawdataSchema);
 }
 
