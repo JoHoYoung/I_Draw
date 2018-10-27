@@ -36,7 +36,7 @@ router.route('/play').post(function (req, res) {
     var pivot = 3;
 
     var sendset = [];
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 3; i++) {
         let num = Math.floor(Math.random() * pivot);
         pivot--;
         sendset.push(probset[num]);
