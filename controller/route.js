@@ -23,7 +23,6 @@ router.route('/question').post(function (req, res) {
 
 });
 
-
 router.route('/play').post(function (req, res) {
     var user = req.body.user;
     console.log(req.body);
