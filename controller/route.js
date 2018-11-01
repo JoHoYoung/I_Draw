@@ -19,8 +19,9 @@ router.route('/question').post(function (req, res) {
     res.render('question', {
         user: req.session.name
     });
-    
+
 });
+
 
 router.route('/play').post(function (req, res) {
     var user = req.body.user;
