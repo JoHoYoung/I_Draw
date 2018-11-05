@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15b04691-214f-4a6c-9f7e-82a305e5a39e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/asdfdfas-1540016358691" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/asdfdfas-1540016358708" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/undefined-1540015039101" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/undefined-1540015039119" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/undefined-1540015119942" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/undefined-1540015119960" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/undefined-1540015154085" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/undefined-1540015154102" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/undefined-1540015202561" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/undefined-1540015202578" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/undefined-1540015253759" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/undefined-1540015253777" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/undefined-1540015329037" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/undefined-1540015329058" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/undefined-1540015550303" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/제목 없음-13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/history.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/play.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/question.ejs" beforeDir="false" />
-    </list>
+    <list default="true" id="15b04691-214f-4a6c-9f7e-82a305e5a39e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -248,12 +225,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1541421888213</updated>
-      <workItem from="1541421889360" duration="952000" />
+      <workItem from="1541421889360" duration="1056000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="952000" />
+    <option name="totallyTimeSpent" value="1056000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
