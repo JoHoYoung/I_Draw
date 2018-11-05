@@ -1,11 +1,11 @@
 # I_Draw
 
 ## Mini project I_Draw [Depromeet]
- A web <project that predicts in real-time user-generated pictures through ai.<br> Nodejs server processes most mvc and communicates the user's  drawing with the django server in real time with ajax to show the real-time result to the user.<br> A total of 3 stages can be played. When submitted, the result predicted by the django server is transferred to the nodejs server.<br> The user's drawing transferd to S3 and stores the image url together to Mongodb.
+ A web project that predicts in real-time user-generated pictures through ai.<br> Nodejs server processes most mvc and communicates the user's  drawing with the django server in real time with ajax to show the real-time result to the user.<br> A total of 3 stages can be played. When submitted, the result predicted by the django server is transferred to the nodejs server.<br> The user's drawing transferd to S3 and stores the image url together to Mongodb.
 
 * * *
 
-<img width="1439" alt="2018-11-05 11 22 55" src="https://user-images.githubusercontent.com/37579650/48003444-d364cf80-e151-11e8-8764-5be6940f0512.png">
+<img width="1438" alt="2018-11-05 11 38 23" src="https://user-images.githubusercontent.com/37579650/48004222-f2646100-e153-11e8-8e1c-73687a23c376.png">
 
 * * *
 
