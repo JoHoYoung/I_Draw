@@ -32,7 +32,7 @@ router.route('/play').post(function (req, res) {
         authorized: true
     };
 
-    var probset = ['cat', 'airplane', 'rainbow']
+    var probset = ['cat', 'airplane', 'rainbow','dog', 'wood','iphone']
     var pivot = 3;
 
     var sendset = [];
@@ -56,7 +56,13 @@ router.route('/history/:page').get(function (req, res) {
     database.Drawdata.find({}).sort('created_at').skip((skip - 1) * 9).limit(9).exec(function (err, results) { 
     res.json(results);
  })
-    
+
+
 });
+
+router.route('/result').get(function (req,res){
+
+    res.render('result');
+})
 
 module.exports = router;
